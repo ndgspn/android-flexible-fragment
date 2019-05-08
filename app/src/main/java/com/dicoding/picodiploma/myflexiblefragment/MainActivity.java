@@ -14,11 +14,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentManager mFramentManager = getSupportFragmentManager();
-        FragmentTransaction mFragmentTransaction = mFramentManager.beginTransaction();
+        FragmentManager mFragmentManager = getSupportFragmentManager();
+        FragmentTransaction mFragmentTransaction = mFragmentManager.beginTransaction();
         HomeFragment mHomeFragment = new HomeFragment();
 
-        Fragment fragment = mFramentManager.findFragmentByTag(HomeFragment.class.getSimpleName());
+        Fragment fragment = mFragmentManager.findFragmentByTag(HomeFragment.class.getSimpleName());
         if (!(fragment instanceof HomeFragment)) {
             mFragmentTransaction.add(R.id.frame_container, mHomeFragment, HomeFragment.class.getSimpleName());
             Log.d("MyFlexibleFragment", "Fragment Name : " + HomeFragment.class.getSimpleName());
